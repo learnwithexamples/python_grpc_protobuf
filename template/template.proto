@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+
+package template;
+
+// The greeting service definition.
+service Template {
+  // Sends a greeting
+  rpc SendRequest (TimeWindow) returns (MyInfo) {}
+}
+
+// The request message containing the user's name.
+message TimeStamp {
+  int32 day = 1;
+  int32 hour = 2;
+  int32 min = 3;
+}
+message TimeWindow {
+  TimeStamp start = 1;
+  TimeStamp stop = 2;
+}
+
+// The response message containing the greetings
+message MyInfo {
+  string duration = 1;
+}
+
